@@ -8,9 +8,20 @@ dependencies = [
     "ipykernel>=7.2.0",
     "jupyter>=1.1.1",
     "pandas>=3.0.1",
+    "ruff>=0.15.6",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
 ]
 
 [tool.uv]
 package = false 
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+# Asegúrate de que F401 NO esté en la lista de 'ignore'
+ignore = [] 
+
+[tool.ruff.lint]
+# Esto le dice a Ruff que limpie las importaciones no usadas automáticamente
+fixable = ["F401", "I001"]
